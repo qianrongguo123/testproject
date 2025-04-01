@@ -16,6 +16,6 @@ Resources:
           Essential: true
           Memory: 1024
           PortMappings:
-            - ContainerPort: 8088
-              HostPort: 8088
+            - ContainerPort: !Ref port
+              HostPort: !Ref port
               Protocol: tcp

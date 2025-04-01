@@ -8,6 +8,7 @@ Resources:
     Type: AWS::ECS::TaskDefinition
     Properties:
       Family: nginx-example
+      Memory: 1024
       ContainerDefinitions:
         - Name: nginx
           Image: nginx:latest
@@ -16,7 +17,4 @@ Resources:
             - ContainerPort: !Ref port
               HostPort: !Ref port
               Protocol: tcp
-      requiresCompatibilities: FARGATE
-      cpu: 1
-      Memory: 1024
 

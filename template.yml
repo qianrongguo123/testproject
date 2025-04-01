@@ -12,6 +12,8 @@ Resources:
         - Name: nginx
           Image: nginx:latest
           Essential: true
+          requiresCompatibilities: FARGATE
+          cpu: 1
           Memory: 1024
           PortMappings:
             - ContainerPort: !Ref port

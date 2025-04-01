@@ -8,8 +8,8 @@ Resources:
     Type: AWS::ECS::TaskDefinition
     Properties:
       Family: nginx-example
-      Memory: 3096
-      Cpu: 1 vCPU
+      Memory: 3072
+      Cpu: 1024
       NetworkMode: awsvpc
       RequiresCompatibilities: ['FARGATE']
       ContainerDefinitions:

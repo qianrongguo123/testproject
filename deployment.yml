@@ -1,4 +1,5 @@
-template-file-path:template.yml
+template-file-path: template.yml
 parameters:
   port: '80'
-tags: {}
+tags:
+  env: test

@@ -9,6 +9,8 @@ Resources:
     Properties:
       Family: nginx-example
       Memory: 1024
+      cpu: 1024      
+      requiresCompatibilities: ['FARGATE']
       ContainerDefinitions:
         - Name: nginx
           Image: nginx:latest

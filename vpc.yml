@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Parameters:
+  PJid:
+    Type: String
+    Default: "test"
+  VPCCIDR:
+    Type: String
+    Default: "10.0.0.0/16"
+
+Resources: 
+# VPC network
+  VPC: 
+    Type: "AWS::EC2::VPC"
+    Properties: 
+      CidrBlock: !Ref VPCCIDR
+      EnableDnsSupport: "true"
+      EnableDnsHostnames: "true"
+      InstanceTenancy: default
+      Tags: 
+        - Key: Name
+          Value: !Sub "${PJid}-vpc"

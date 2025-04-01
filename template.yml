@@ -12,10 +12,11 @@ Resources:
         - Name: nginx
           Image: nginx:latest
           Essential: true
-          requiresCompatibilities: FARGATE
-          cpu: 1
-          Memory: 1024
           PortMappings:
             - ContainerPort: !Ref port
               HostPort: !Ref port
               Protocol: tcp
+      requiresCompatibilities: FARGATE
+      cpu: 1
+      Memory: 1024
+

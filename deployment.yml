@@ -1,0 +1,4 @@
+template-file-path: template.yml
+parameters:
+  port:'8080'
+tags: {}

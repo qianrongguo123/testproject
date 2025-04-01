@@ -1,4 +1,25 @@
-template-file-path: template.yml
+template-file-path: deployment.yml
 parameters:
-  port:'8088'
+  TemplatePath: template.yml
+  ParameterOverrides: ''
+  CodePipelineName: DeployToCloudFormationService
+  ConnectionArn: >-
+    arn:aws:codeconnections:ap-northeast-1:194722434925:connection/f61fd08c-8b5b-44bb-8f0f-d51207939685
+  TemplateConfiguration: ''
+  BranchName: main
+  OutputFileName: output.json
+  RetentionPolicy: Delete
+  FullRepositoryId: qianrongguo123/testproject
+  StackName: teststack
+  CloudFormationResourcePermissions: |-
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Action": "*",
+                "Resource": "*"
+            }
+        ]
+    }
 tags: {}

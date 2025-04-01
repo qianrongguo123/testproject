@@ -9,7 +9,8 @@ Resources:
     Properties:
       Family: nginx-example
       Memory: 1024
-      Cpu: 1024      
+      Cpu: 1024
+      NetworkMode: awsvpc
       RequiresCompatibilities: ['FARGATE']
       ContainerDefinitions:
         - Name: nginx

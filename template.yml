@@ -1,8 +1,11 @@
+
 AWSTemplateFormatVersion: '2010-09-09'
+
 Parameters:
   port:
     Type: Number
     Description: container port
+
 Resources:
   NginxTaskDefinition:
     Type: AWS::ECS::TaskDefinition
@@ -20,4 +23,3 @@ Resources:
             - ContainerPort: !Ref port
               HostPort: !Ref port
               Protocol: tcp
-

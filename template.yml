@@ -4,7 +4,7 @@ AWSTemplateFormatVersion: '2010-09-09'
 Parameters:
   port:
     Type: Number
-    Description: コンテナのポート番号
+    Description: container port
 
 Resources:
   NginxTaskDefinition:

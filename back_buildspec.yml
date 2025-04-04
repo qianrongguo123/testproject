@@ -1,0 +1,19 @@
+version: 0.2
+
+env:
+  variables:
+
+phases:
+    install:
+        runtime-versions:
+            python: 3.9
+        commands:
+            - TODAY=$(date '+%Y.%m.%d')
+
+    pre_build:
+        commands:
+            - pip install -r src/layers/python/requirements.txt -t src/layers/python
+    post_build:
+        commands:
+            #sam deploy iam.yaml, sg.yaml, ecr.yml,  athena.yml
+            - bash -eu scripts/deploy.sh $ENV_ID

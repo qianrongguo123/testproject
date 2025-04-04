@@ -4,14 +4,17 @@ AWSTemplateFormatVersion: '2010-09-09'
 Parameters:
   port:
     Type: Number
-    Description: コンテナのポート番号
+    Description: container port
 
 Resources:
   NginxTaskDefinition:
     Type: AWS::ECS::TaskDefinition
     Properties:
       Family: nginx-example
-      Memory: 1024
+      Cpu: 1024
+      Memory: 3072
+      NetworkMode: awsvpc
+      RequiresCompatibilities: ['FARGATE']
       ContainerDefinitions:
         - Name: nginx
           Image: nginx:latest
